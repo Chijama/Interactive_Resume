@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:interactiveresume/widgets/certification.dart';
 import 'package:interactiveresume/widgets/skill.dart';
-import '../widgets/contact.dart';
-import '../widgets/projects.dart';
 
+import '../widgets/contact.dart';
 import '../widgets/education_work.dart';
+import '../widgets/projects.dart';
 import '../widgets/title_widget.dart';
 
 class AboutMeScreen extends StatelessWidget {
@@ -17,7 +17,7 @@ class AboutMeScreen extends StatelessWidget {
   static const Color shadow_color = Color.fromARGB(255, 139, 129, 129);
   Widget circlIcon(IconData icon) {
     return CircleAvatar(
-      backgroundColor: Color.fromARGB(207, 136, 11, 32),
+      backgroundColor: const Color.fromARGB(207, 136, 11, 32),
       child: Icon(icon, color: Colors.white),
     );
   }
@@ -39,73 +39,58 @@ class AboutMeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Stack(
-              children: <Widget>[
-                Container(
-                  // constraints: BoxConstraints.expand(
-                  //   width: double.infinity,
-                  //   height: size.height / 2.0,
-                  // ),
-                  height: size.height / 2,
-                  width: size.width,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image:
-                            AssetImage('assets/images/stare_cropped_img.jpg'),
-                        fit: BoxFit.contain),
-                  ),
-                  child: Container(),
-                ),
-                Positioned(
-                  bottom: 20,
-                  left: 0,
-                  child: Card(
-                    elevation: 8,
-                    color: Colors.black54,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15)),
-                    shadowColor: shadow_color,
-                    child: Container(
-                      padding: EdgeInsets.all(10),
-                      width: 300,
-                      height: 100,
-                      child: Column(
-                        children: [
-                          Text(
-                            "Chijama Chidera",
-                            style: GoogleFonts.raleway(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 35),
-                          ),
-                          Text(
-                            'Flutter Developer',
-                            style: GoogleFonts.montserrat(
-                                color: mainColor,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-
-            SizedBox(
-              height: 10,
-            ),
-            const TitleWidget(shadow_color, mainTextColor, 'About Me'),
-
-            SizedBox(
-              height: 10,
-            ),
             Container(
-              padding: EdgeInsets.all(10),
+              height: size.height / 2,
+              width: size.width,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/stare_cropped_img.jpg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            Positioned(
+              bottom: 20,
+              left: 0,
+              child: Card(
+                elevation: 8,
+                color: Colors.black54,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)),
+                shadowColor: shadow_color,
+                child: Container(
+                  padding: const EdgeInsets.all(10),
+                  width: 300,
+                  height: 100,
+                  child: Column(
+                    children: [
+                      Text(
+                        "Chijama Chidera",
+                        style: GoogleFonts.raleway(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 35),
+                      ),
+                      Text(
+                        'Flutter Developer',
+                        style: GoogleFonts.montserrat(
+                            color: mainColor,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            const TitleWidget(shadow_color, mainTextColor, 'About Me'),
+            const SizedBox(height: 10),
+            Container(
+              padding: const EdgeInsets.all(10),
               width: double.infinity,
               child: Text(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam laoreet neque eu pulvinar venenatis. Cras eleifend erat eu vulputate interdum. Ut sagittis ac arcu id commodo. Nam sed convallis neque. Duis vitae posuere mi. Cras velit dolor, aliquam vitae convallis id, tincidunt in turpis. Maecenas fermentum lacus quis dui faucibus ultrices.",
+                "Aspiring Mobile developer passionate about transforming innovative ideas and concepts into real-life applications. Looking for opportunities as a mobile developer with an expert team of developers who will help build and deliver products to advance my career progression to senior positions in the future.",
                 style: GoogleFonts.openSans(
                     color: mainTextColor,
                     fontWeight: FontWeight.normal,
@@ -116,7 +101,7 @@ class AboutMeScreen extends StatelessWidget {
             SizedBox(
               height: size.height * 0.06,
             ),
-            TitleWidget(shadow_color, mainTextColor, 'Education'),
+            const TitleWidget(shadow_color, mainTextColor, 'Education'),
             SizedBox(
               height: size.height * 0.06,
             ),
@@ -131,12 +116,11 @@ class AboutMeScreen extends StatelessWidget {
                     children: [
                       Expanded(
                         flex: 1,
-                        child: Container(
+                        child: SizedBox(
                             height: size.height * 0.3,
-                            //color: Colors.indigo,
                             child: Stack(
                               children: [
-                                Center(
+                                const Center(
                                   child: VerticalDivider(
                                     color: mainColor,
                                     thickness: 3.0,
@@ -145,27 +129,25 @@ class AboutMeScreen extends StatelessWidget {
                                     endIndent: 10,
                                   ),
                                 ),
-                                Container(
-                                  child: Center(
-                                      child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                    children: [
-                                      circlIcon(Icons.book),
-                                      circlIcon(Icons.book),
-                                    ],
-                                  )),
-                                )
+                                Center(
+                                    child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    circlIcon(Icons.book),
+                                    circlIcon(Icons.book),
+                                  ],
+                                ))
                               ],
                             )),
                       ),
                       Expanded(
                           flex: 4,
-                          child: Container(
+                          child: SizedBox(
                             height: size.height * 0.3,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
+                              children: const [
                                 WorkCustomData(
                                   title: 'Computer Science',
                                   subTitle: 'Covenant University',
@@ -192,7 +174,7 @@ class AboutMeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            TitleWidget(shadow_color, mainTextColor, 'My Experience'),
+            const TitleWidget(shadow_color, mainTextColor, 'My Experience'),
             SizedBox(
               height: size.height * 0.06,
             ),
@@ -207,12 +189,12 @@ class AboutMeScreen extends StatelessWidget {
                     children: [
                       Expanded(
                         flex: 1,
-                        child: Container(
+                        child: SizedBox(
                             height: size.height * 0.7,
                             //color: Colors.indigo,
                             child: Stack(
                               children: [
-                                Center(
+                                const Center(
                                   child: VerticalDivider(
                                     color: mainColor,
                                     thickness: 3.0,
@@ -239,11 +221,11 @@ class AboutMeScreen extends StatelessWidget {
                       ),
                       Expanded(
                           flex: 4,
-                          child: Container(
+                          child: SizedBox(
                             height: size.height * 0.7,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
+                              children: const [
                                 WorkCustomData(
                                   title: 'Cyber Security Manager Intern',
                                   subTitle: 'Huawei Technologies Nigeria',
@@ -293,15 +275,15 @@ class AboutMeScreen extends StatelessWidget {
             SizedBox(
               height: size.height * 0.06,
             ),
-            TitleWidget(shadow_color, mainTextColor, 'Skills'),
+            const TitleWidget(shadow_color, mainTextColor, 'Skills'),
             SizedBox(
               height: size.height * 0.06,
             ),
-            Skills(mainColor, mainTextColor),
+            const Skills(mainColor, mainTextColor),
             SizedBox(
               height: size.height * 0.06,
             ),
-            TitleWidget(shadow_color, mainTextColor, 'Projects'),
+            const TitleWidget(shadow_color, mainTextColor, 'Projects'),
             SizedBox(
               height: size.height * 0.06,
             ),
@@ -309,7 +291,7 @@ class AboutMeScreen extends StatelessWidget {
             SizedBox(
               height: size.height * 0.06,
             ),
-            TitleWidget(shadow_color, mainTextColor, 'Certifications'),
+            const TitleWidget(shadow_color, mainTextColor, 'Certifications'),
             SizedBox(
               height: size.height * 0.06,
             ),
@@ -321,7 +303,7 @@ class AboutMeScreen extends StatelessWidget {
               //height: size.height * 0.05,
             ),
 
-            Contact(mainTextColor, burgundy, mainColor),
+            const Contact(mainTextColor, burgundy, mainColor),
             SizedBox(
               height: size.height * 0.08,
             ),

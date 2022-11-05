@@ -18,8 +18,7 @@ class TitleWidget extends StatelessWidget {
         ),
         shadowColor: shadow_color,
         child: Container(
-          padding: EdgeInsets.all(10),
-          width: MediaQuery.of(context).size.width / 3,
+          padding: const EdgeInsets.all(10),
           child: Text(
             title,
             textAlign: TextAlign.center,

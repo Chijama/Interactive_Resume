@@ -9,6 +9,7 @@ class WorkCustomData extends StatelessWidget {
   final Color burgundyTextColor;
 
   const WorkCustomData({
+    super.key,
     required this.title,
     required this.subTitle,
     required this.duration,
@@ -30,9 +31,7 @@ class WorkCustomData extends StatelessWidget {
             fontSize: 25,
           ),
         ),
-        SizedBox(
-          height: 6.0,
-        ),
+        const SizedBox(height: 6.0),
         Text(
           subTitle,
           style: TextStyle(
@@ -41,7 +40,7 @@ class WorkCustomData extends StatelessWidget {
             fontSize: 15,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 6.0,
         ),
         Row(
@@ -56,13 +55,16 @@ class WorkCustomData extends StatelessWidget {
                 fontSize: 12,
               ),
             ),
-            Text(
-              location,
-              style: TextStyle(
-                fontStyle: FontStyle.italic,
-                color: burgundyTextColor,
-                fontWeight: FontWeight.w700,
-                fontSize: 12,
+            const SizedBox(width: 10),
+            Expanded(
+              child: Text(
+                location,
+                style: TextStyle(
+                  fontStyle: FontStyle.italic,
+                  color: burgundyTextColor,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 12,
+                ),
               ),
             ),
           ],

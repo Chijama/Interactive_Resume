@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '/screens/about_me_screen.dart';
+import 'screens/main_screen.dart';
 import 'package:scaled_list/scaled_list.dart';
 
 void main() {
@@ -30,7 +30,6 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (ctx) => MyHomePage(title: 'Flutter Demo Home Page'),
-        AboutMeScreen.routeName: (ctx) => AboutMeScreen(),
       },
     );
   }
@@ -57,6 +56,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return AboutMeScreen();
+    return MainScreen();
   }
 }

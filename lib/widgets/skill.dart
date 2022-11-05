@@ -72,7 +72,7 @@ class Skills extends StatelessWidget {
     return ConstrainedBox(
       constraints: BoxConstraints.tightFor(
         width: 700,
-        height: MediaQuery.of(context).size.height * 0.4,
+        height: MediaQuery.of(context).size.height * 0.45,
       ),
       child: Column(
         children: [
